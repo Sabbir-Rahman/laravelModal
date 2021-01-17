@@ -27,40 +27,42 @@
                 <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form>
+
+            <form action="store" method="POST">
+
+                {{csrf_field()}}
                 <div class="modal-body">
 
                     <div class="mb-3">
                         <label >First name</label>
-                        <input type="text" class="form-control" placeholder="Enter first name">
+                        <input type="text" name="fname" class="form-control" placeholder="Enter first name">
 
                     </div>
                     <div class="mb-3">
                         <label >Last name</label>
-                        <input type="text" class="form-control" placeholder="Enter last name">
+                        <input type="text" name="lname" class="form-control" placeholder="Enter last name">
 
                     </div>
                     <div class="mb-3">
                         <label >Email</label>
-                        <input type="email" class="form-control" placeholder="Enter email">
+                        <input type="email" name="email" class="form-control" placeholder="Enter email">
 
                     </div>
                     <div class="mb-3">
                         <label >Address</label>
-                        <input type="text" class="form-control" placeholder="Enter Address">
+                        <input type="text" name="address" class="form-control" placeholder="Enter Address">
 
                     </div>
                     <div class="mb-3">
                         <label >Mobile</label>
-                        <input type="number" class="form-control" placeholder="Enter mobile no">
+                        <input type="number" name="mobile" class="form-control" placeholder="Enter mobile no">
 
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
 
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="submit" class="btn btn-primary">Save data</button>
                 </div>
             </form>
         </div>

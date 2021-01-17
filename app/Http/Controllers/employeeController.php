@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\employee;
 
-class employee extends Controller
+class employeeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -32,9 +33,29 @@ class employee extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+    function addData(Request $request){
+        $emp = new employee();
+
+        $emp->fname = $request->input('fname');
+        $emp->lname = $request->input('lname');
+        $emp->email = $request->input('email');
+        $emp->address = $request->input('address');
+        $emp->mobile = $request->input('mobile');
+
+        $query = $emp->save();
+
+        if($query)
+        {
+            return "Success";
+        }
+        else
+            return "Fail";
+    }
+
     public function store(Request $request)
     {
-        //
+
     }
 
     /**

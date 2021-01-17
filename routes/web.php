@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\employee;
+use App\Http\Controllers\employeeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +19,6 @@ Route::get('/', function () {
 });
 
 //as controller is resource controller it can be directly called
-Route::resource('/employee',employee::class);
+Route::resource('/employee',employeeController::class);
+
+Route::post('/store',[employeeController::class,'addData']);
