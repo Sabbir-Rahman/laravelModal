@@ -57,7 +57,7 @@ class employeeController extends Controller
 
         if($query)
         {
-            return redirect()->with('success','Data Saved');
+            return redirect('/employee')->with('success','Data Saved');
         }
         else
             return "Fail";
