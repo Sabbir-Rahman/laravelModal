@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\employee;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('employee',function (){
-    return view('employee');
-})->name('employee');
+//as controller is resource controller it can be directly called
+Route::resource('/employee',employee::class);
