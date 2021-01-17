@@ -94,6 +94,7 @@
             <th scope="col">Email</th>
             <th scope="col">Address</th>
             <th scope="col">Mobile</th>
+            <th scope="col">Action</th>
         </thead>
         <tbody>
             @foreach($employees as $employee)
@@ -104,6 +105,10 @@
                 <td scope="row">{{$employee['email']}}</td>
                 <td scope="row">{{$employee['address']}}</td>
                 <td scope="row">{{$employee['mobile']}}</td>
+                <td>
+                    <a href="" class="btn btn-primary">EDIT</a>
+                    <a href="" class="btn btn-danger">DELETE</a>
+                </td>
             </tr>
             @endforeach
         </tbody>
