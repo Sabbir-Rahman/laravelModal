@@ -29,6 +29,12 @@ class employeeController extends Controller
         //
     }
 
+
+    function editForm($id){
+
+        dump($id);
+        return "Edit hit";
+    }
     /**
      * Store a newly created resource in storage.
      *
