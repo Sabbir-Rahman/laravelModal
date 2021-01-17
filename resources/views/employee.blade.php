@@ -34,27 +34,27 @@
                 <div class="modal-body">
 
                     <div class="mb-3">
-                        <label >First name</label>
+                        <label>First name</label>
                         <input type="text" name="fname" class="form-control" placeholder="Enter first name">
 
                     </div>
                     <div class="mb-3">
-                        <label >Last name</label>
+                        <label>Last name</label>
                         <input type="text" name="lname" class="form-control" placeholder="Enter last name">
 
                     </div>
                     <div class="mb-3">
-                        <label >Email</label>
+                        <label>Email</label>
                         <input type="email" name="email" class="form-control" placeholder="Enter email">
 
                     </div>
                     <div class="mb-3">
-                        <label >Address</label>
+                        <label>Address</label>
                         <input type="text" name="address" class="form-control" placeholder="Enter Address">
 
                     </div>
                     <div class="mb-3">
-                        <label >Mobile</label>
+                        <label>Mobile</label>
                         <input type="number" name="mobile" class="form-control" placeholder="Enter mobile no">
 
                     </div>

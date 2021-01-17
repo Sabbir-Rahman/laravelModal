@@ -35,6 +35,16 @@ class employeeController extends Controller
      */
 
     function addData(Request $request){
+
+
+        $this->validate($request,[
+            'fname' => 'required',
+            'lname' => 'required',
+            'address' => 'required',
+            'email' => 'required',
+            'mobile' => 'required',
+        ]);
+
         $emp = new employee();
 
         $emp->fname = $request->input('fname');
@@ -47,7 +57,7 @@ class employeeController extends Controller
 
         if($query)
         {
-            return "Success";
+            return redirect()->with('success','Data Saved');
         }
         else
             return "Fail";
