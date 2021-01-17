@@ -84,6 +84,30 @@
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
         Add data with modal
     </button>
+
+    <br><br><br><br>
+    <table class="table table-dark table-striped">
+        <thead>
+            <th scope="col">Id</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Address</th>
+            <th scope="col">Mobile</th>
+        </thead>
+        <tbody>
+            @foreach($employees as $employee)
+            <tr>
+                <td scope="row">{{$employee['id']}}</td>
+                <td scope="row">{{$employee['fname']}}</td>
+                <td scope="row">{{$employee['lname']}}</td>
+                <td scope="row">{{$employee['email']}}</td>
+                <td scope="row">{{$employee['address']}}</td>
+                <td scope="row">{{$employee['mobile']}}</td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
 </div>
 
 

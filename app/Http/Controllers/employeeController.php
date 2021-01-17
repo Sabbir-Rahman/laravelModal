@@ -12,9 +12,11 @@ class employeeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    function index()
     {
-        return view('employee');
+        $data = employee::all();
+        return view('employee',['employees'=>$data]);
+
     }
 
     /**
