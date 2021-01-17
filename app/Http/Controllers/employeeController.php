@@ -30,10 +30,10 @@ class employeeController extends Controller
     }
 
 
-    function editForm($id){
+    function goEditForm($id){
 
-        dump($id);
-        return "Edit hit";
+        $emp = employee::find($id);
+        return view('editEmployee',['data'=>$emp]);
     }
     /**
      * Store a newly created resource in storage.

@@ -23,4 +23,4 @@ Route::resource('/employee',employeeController::class);
 
 Route::post('/store',[employeeController::class,'addData']);
 
-Route::get('/edit/{id}',[employeeController::class,'editForm'])->name('form.edit');
+Route::get('/edit/{id}',[employeeController::class,'goEditForm'])->name('form.edit');
