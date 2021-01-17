@@ -7,7 +7,7 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css">
+
 
 </head>
 <body>
@@ -26,12 +26,15 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
-                <form action="/employee" method="POST" id="editForm">
+                <form action="/abc" method="POST" >
 
-                    {{csrf_field()}}
-                    {{method_field('PUT')}}
+                    @csrf
                     <div class="modal-body">
 
+                        <div class="mb-3">
+                            <input type="hidden" name="id" id="edit-fname" value="{{$data['id']}}" class="form-control" placeholder="Enter first name">
+
+                        </div>
                         <div class="mb-3">
                             <label>First name</label>
                             <input type="text" name="fname" id="edit-fname" value="{{$data['fname']}}" class="form-control" placeholder="Enter first name">

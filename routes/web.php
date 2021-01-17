@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\employeeController;
+use App\Http\Controllers\updateEmployee;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,4 +24,8 @@ Route::resource('/employee',employeeController::class);
 
 Route::post('/store',[employeeController::class,'addData']);
 
+Route::post('abc',[updateEmployee::class,'updateData']);
+
 Route::get('/edit/{id}',[employeeController::class,'goEditForm'])->name('form.edit');
+
+

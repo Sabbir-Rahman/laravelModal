@@ -7,6 +7,7 @@ use App\Models\employee;
 
 class employeeController extends Controller
 {
+    public $editId;
     /**
      * Display a listing of the resource.
      *
@@ -26,21 +27,18 @@ class employeeController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
 
     function goEditForm($id){
 
-        $emp = employee::find($id);
+        $this->editId = $id;
+        $emp = employee::find($this->editId);
         return view('editEmployee',['data'=>$emp]);
     }
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
+
 
     function addData(Request $request){
 
@@ -98,17 +96,7 @@ class employeeController extends Controller
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+
 
     /**
      * Remove the specified resource from storage.

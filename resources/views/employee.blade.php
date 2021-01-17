@@ -62,57 +62,6 @@
 </div>
 {{--end add data modal--}}
 
-{{--edit data modal--}}
-<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-
-            <form action="/employee" method="POST" id="editForm">
-
-                {{csrf_field()}}
-                {{method_field('PUT')}}
-                <div class="modal-body">
-
-                    <div class="mb-3">
-                        <label>First name</label>
-                        <input type="text" name="fname" id="edit-fname" class="form-control" placeholder="Enter first name">
-
-                    </div>
-                    <div class="mb-3">
-                        <label>Last name</label>
-                        <input type="text" name="lname" id="edit-lname" class="form-control" placeholder="Enter last name">
-
-                    </div>
-                    <div class="mb-3">
-                        <label>Email</label>
-                        <input type="email" name="email" id="edit-email" class="form-control" placeholder="Enter email">
-
-                    </div>
-                    <div class="mb-3">
-                        <label>Address</label>
-                        <input type="text" name="address" id="edit-address" class="form-control" placeholder="Enter Address">
-
-                    </div>
-                    <div class="mb-3">
-                        <label>Mobile</label>
-                        <input type="number" name="mobile" id="edit-mobile" class="form-control" placeholder="Enter mobile no">
-
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Update data</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-{{--end edit data modal--}}
 
 
 <div class="container">
