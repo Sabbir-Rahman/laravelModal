@@ -22,8 +22,8 @@ class emp extends Controller
 
     }
 
-    function search(){
-        return "Hit";
+    function search(Request $request){
+        return $request->input('search_data');
     }
 
 
