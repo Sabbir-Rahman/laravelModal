@@ -22,6 +22,10 @@ class emp extends Controller
 
     }
 
+    function search(){
+        return "Hit";
+    }
+
 
     function goEditForm($id)
     {

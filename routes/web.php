@@ -27,6 +27,8 @@ Route::post('/store',[emp::class,'addData']);
 
 Route::post('abc',[updateEmployee::class,'updateData']);
 
+Route::post('search',[emp::class,'search']);
+
 Route::get('/edit/{id}',[emp::class,'goEditForm'])->name('form.edit');
 
 Route::get('/delete/{id}',[emp::class,'delete'])->name('delete');
