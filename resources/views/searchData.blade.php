@@ -11,81 +11,8 @@
 
 </head>
 <body>
-{{--add data modal--}}
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-
-            <form action="store" method="POST">
-
-                {{csrf_field()}}
-                <div class="modal-body">
-
-                    <div class="mb-3">
-                        <label>First name</label>
-                        <input type="text" name="fname" class="form-control" placeholder="Enter first name">
-
-                    </div>
-                    <div class="mb-3">
-                        <label>Last name</label>
-                        <input type="text" name="lname" class="form-control" placeholder="Enter last name">
-
-                    </div>
-                    <div class="mb-3">
-                        <label>Email</label>
-                        <input type="email" name="email" class="form-control" placeholder="Enter email">
-
-                    </div>
-                    <div class="mb-3">
-                        <label>Address</label>
-                        <input type="text" name="address" class="form-control" placeholder="Enter Address">
-
-                    </div>
-                    <div class="mb-3">
-                        <label>Mobile</label>
-                        <input type="number" name="mobile" class="form-control" placeholder="Enter mobile no">
-
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save data</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-{{--end add data modal--}}
-
 
 <div class="container">
-    <h1>Welcome from laravel modal</h1>
-    @if(count($errors)>0)
-
-        <div class="alert alert-danger">
-            <ul>
-                @foreach($errors->all() as $error)
-                    <li>{{$error}}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-
-    @if(\Session::has('success'))
-        <div class="alert alert-success">
-            <p>{{ \Session::get('success') }}</p>
-        </div>
-@endif
-
-<!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Add data with modal
-    </button>
 
     <br><br><br><br>
     <nav class="navbar navbar-dark bg-dark">
