@@ -29,6 +29,6 @@ Route::post('abc',[updateEmployee::class,'updateData']);
 
 Route::get('/edit/{id}',[emp::class,'goEditForm'])->name('form.edit');
 
-Route::get('/delete',[emp::class,'delete'])->name('delete');
+Route::get('/delete/{id}',[emp::class,'delete'])->name('delete');
 
 

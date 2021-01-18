@@ -110,7 +110,7 @@
                 <td scope="row">{{$employee['mobile']}}</td>
                 <td>
                     <a href="{{route('form.edit',$employee->id)}}" class="btn btn-primary">EDIT</a>
-                    <a href="{{route('delete')}}" class="btn btn-danger">DELETE</a>
+                    <a href="{{route('delete',$employee->id)}}" class="btn btn-danger">DELETE</a>
                 </td>
             </tr>
             @endforeach
