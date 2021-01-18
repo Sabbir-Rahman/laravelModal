@@ -63,13 +63,12 @@ class emp extends Controller
     function delete($id)
     {
 
-        dd($id);
-        $emp = employee::find();
+        $emp = employee::find($id);
 
-        $query = $emp->save();
+        $query = $emp->delete();
 
         if ($query) {
-            return redirect('/employee')->with('success', 'Data Updated');
+            return redirect('/employee')->with('success', 'Data Deleted');
 
         } else
             return "Fail";
