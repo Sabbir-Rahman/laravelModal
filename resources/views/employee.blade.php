@@ -63,7 +63,6 @@
 {{--end add data modal--}}
 
 
-
 <div class="container">
     <h1>Welcome from laravel modal</h1>
     @if(count($errors)>0)
@@ -94,23 +93,33 @@
             <a class="navbar-brand">Data Table</a>
             <form action="search" method="POST" class="d-flex">
                 @csrf
-                <input class="form-control me-2" type="search" name="search_data" placeholder="Search" aria-label="Search">
+                <h6><font color="white">Search By:</font></h6>&nbsp&nbsp
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Open this select menu</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+
+                &nbsp&nbsp&nbsp&nbsp
+                <input class="form-control me-2" type="search" name="search_data" placeholder="Search"
+                       aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
         </div>
     </nav>
     <table id="datatable" class="table table-dark table-striped">
         <thead>
-            <th scope="col">Id</th>
-            <th scope="col">First Name</th>
-            <th scope="col">Last Name</th>
-            <th scope="col">Email</th>
-            <th scope="col">Address</th>
-            <th scope="col">Mobile</th>
-            <th scope="col">Action</th>
+        <th scope="col">Id</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Address</th>
+        <th scope="col">Mobile</th>
+        <th scope="col">Action</th>
         </thead>
         <tbody>
-            @foreach($employees as $employee)
+        @foreach($employees as $employee)
             <tr>
                 <td scope="row">{{$employee['id']}}</td>
                 <td scope="row">{{$employee['fname']}}</td>
@@ -123,7 +132,7 @@
                     <a href="{{route('delete',$employee->id)}}" class="btn btn-danger">DELETE</a>
                 </td>
             </tr>
-            @endforeach
+        @endforeach
         </tbody>
     </table>
 </div>
