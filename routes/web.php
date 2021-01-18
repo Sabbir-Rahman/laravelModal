@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\employeeController;
 use App\Http\Controllers\updateEmployee;
-
+use App\Http\Controllers\emp;
+use App\Http\Controllers\deleteEmployee;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,12 +21,14 @@ Route::get('/', function () {
 });
 
 //as controller is resource controller it can be directly called
-Route::resource('/employee',employeeController::class);
+Route::get('/employee',[emp::class,'index']);
 
-Route::post('/store',[employeeController::class,'addData']);
+Route::post('/store',[emp::class,'addData']);
 
 Route::post('abc',[updateEmployee::class,'updateData']);
 
-Route::get('/edit/{id}',[employeeController::class,'goEditForm'])->name('form.edit');
+Route::get('/edit/{id}',[emp::class,'goEditForm'])->name('form.edit');
+
+Route::get('/delete',[emp::class,'delete'])->name('delete');
 
 

@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\employee;
-
-class employeeController extends Controller
+class emp extends Controller
 {
     public $editId;
 
@@ -61,7 +60,7 @@ class employeeController extends Controller
             return "Fail";
     }
 
-
-
-
+    function delete(){
+        return "Function hit";
+    }
 }
