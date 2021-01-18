@@ -13,8 +13,15 @@
 <body>
 
 <div class="container">
+    <br>
+    <h2>Employee Search data</h2>
 
-    <br><br><br><br>
+    @if($count>1)
+        <h6>Total {{$count}} records found</h6>
+    @else
+        <h6>Total {{$count}} record found</h6>
+    @endif
+    <br><br>
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand">Data Table</a>

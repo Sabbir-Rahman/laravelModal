@@ -23,7 +23,11 @@ class emp extends Controller
     }
 
     function search(Request $request){
-        return $request->input();
+
+
+        $emp = employee::where($request->input('search_option'), $request->input('search_data'))->get();
+        $cnt = count($emp);
+        return view('searchData',['employees'=>$emp,'count'=>$cnt]);
     }
 
 
