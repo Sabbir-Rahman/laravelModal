@@ -62,6 +62,38 @@
 </div>
 {{--end add data modal--}}
 
+{{--delete modal--}}
+
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Delete this entry</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <form action="deleteEmployee" method="POST">
+
+                {{csrf_field()}}
+                <div class="modal-body">
+
+                    <div class="mb-3">
+                        <label><font color="red">Are you sure?All data related with this record also be deleted</font></label>
+                        <input type="hidden" name="delete_input_id" id="cat_id" value="">
+
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{{--end Delete modal--}}
 
 <div class="container">
     <h1>Welcome from laravel modal</h1>
@@ -130,7 +162,9 @@
                 <td scope="row">{{$employee['mobile']}}</td>
                 <td>
                     <a href="{{route('form.edit',$employee->id)}}" class="btn btn-primary">EDIT</a>
-                    <a href="{{route('delete',$employee->id)}}" class="btn btn-danger">DELETE</a>
+                    <button type="button" class="btn btn-danger" data-catid="{{$employee->id}}" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                        Delete
+                    </button>
                 </td>
             </tr>
         @endforeach
@@ -138,6 +172,9 @@
     </table>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
         integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
@@ -145,6 +182,18 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
         integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
         crossorigin="anonymous"></script>
+<script>
+    $('#deleteModal').on('show.bs.modal', function (event){
+        var button = $(event.relatedTarget)
+
+        var cat_id = button.data('catid')
+        var modal = $('#deleteModal')
+
+        console.log(cat_id)
+        modal.find('.modal-body input').val(cat_id);
+    })
+
+</script>
 
 </body>
 </html>

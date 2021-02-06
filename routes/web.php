@@ -32,5 +32,6 @@ Route::post('search',[emp::class,'search']);
 Route::get('/edit/{id}',[emp::class,'goEditForm'])->name('form.edit');
 
 Route::get('/delete/{id}',[emp::class,'delete'])->name('delete');
+Route::post('/deleteEmployee',[emp::class,'deleteEmployee'])->name('deleteEmployee');
 
 

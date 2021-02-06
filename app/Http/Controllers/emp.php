@@ -82,4 +82,18 @@ class emp extends Controller
             return "Fail";
     }
 
+    function deleteEmployee(Request $request){
+
+
+        $emp = employee::find($request->delete_input_id);
+
+        $query = $emp->delete();
+
+        if ($query) {
+            return redirect('/employee')->with('success', 'Data Deleted');
+
+        } else
+            return "Fail";
+    }
+
 }
